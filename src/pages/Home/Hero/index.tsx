@@ -47,7 +47,7 @@ function Hero() {
       </div>
       <div className={styles.content}>
         <Logo />
-        <h1 className={styles.title}>React Native</h1>
+        <h1 className={styles.title}>圆友社区</h1>
         <h2 className={styles.subtitle}>Learn once, write anywhere.</h2>
         <div className={styles.buttonContainer}>
           <a href="/docs/environment-setup" className={styles.primaryButton}>

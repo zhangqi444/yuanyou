@@ -9,17 +9,25 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 import users from './showcase.json';
-import versions from './versions.json';
+import { Options } from '@docusaurus/plugin-content-blog';
 
-const lastVersion = versions[0];
-const copyright = `Copyright © ${new Date().getFullYear()} Meta Platforms, Inc.`;
+const copyright = `Copyright © ${new Date().getFullYear()} 圆友社区 版权所有`;
 
 const commonDocsOptions = {
   breadcrumbs: false,
   showLastUpdateAuthor: false,
   showLastUpdateTime: true,
   editUrl:
-    'https://github.com/facebook/react-native-website/blob/main/website/',
+    'https://github.com/zhangqi444/yuanyou',
+};
+
+const commonBlogOptions: Options = {
+  blogSidebarCount: 'ALL',
+  blogSidebarTitle: '全部文章',
+  onInlineAuthors: 'ignore',
+  authorsMapPath: '../authors.yml',
+  // Ignore for now due to old posts
+  onUntruncatedBlogPosts: 'ignore',
 };
 
 const isDeployPreview = process.env.PREVIEW_DEPLOY === 'true';
@@ -33,11 +41,11 @@ const config: Config = {
     experimental_faster: (process.env.DOCUSAURUS_FASTER ?? 'true') === 'true',
   },
 
-  title: 'React Native',
+  title: '圆友社区',
   tagline: 'A framework for building native apps using React',
-  organizationName: 'facebook',
-  projectName: 'react-native',
-  url: 'https://reactnative.dev',
+  organizationName: '圆友社区',
+  projectName: '圆友社区',
+  url: 'https://yuanzhuijiaomo.org',
   baseUrl: '/',
   clientModules: [
     require.resolve('./modules/snackPlayerInitializer.js'),
@@ -63,8 +71,8 @@ const config: Config = {
     facebookAppId: '1677033832619985',
   },
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh',
+    locales: ['zh'],
   },
   onBrokenLinks: 'throw',
   presets: [
@@ -75,34 +83,17 @@ const config: Config = {
           path: './docs',
           sidebarPath: require.resolve('./sidebars'),
           editCurrentVersion: true,
-          onlyIncludeVersions: isDeployPreview
-            ? ['current', ...versions.slice(0, 2)]
-            : undefined,
-          versions: {
-            [lastVersion]: {
-              badge: false, // Do not show version badge for last RN version
-            },
-          },
           ...commonDocsOptions,
         },
         blog: {
           path: 'blog',
-          blogSidebarCount: 'ALL',
-          blogSidebarTitle: 'All Blog Posts',
-          feedOptions: {
-            type: 'all',
-            copyright,
-          },
-          onInlineAuthors: 'ignore',
-          // Ignore for now due to old posts
-          onUntruncatedBlogPosts: 'ignore',
+          ...commonBlogOptions,
         },
         theme: {
           customCss: [
             require.resolve('./src/css/customTheme.scss'),
             require.resolve('./src/css/index.scss'),
             require.resolve('./src/css/showcase.scss'),
-            require.resolve('./src/css/versions.scss'),
           ],
         },
         // TODO: GA is deprecated, remove once we're sure data is streaming in GA4 via gtag.
@@ -118,25 +109,30 @@ const config: Config = {
   plugins: [
     'docusaurus-plugin-sass',
     [
-      'content-docs',
-      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      "@docusaurus/plugin-content-blog",
       {
-        id: 'architecture',
-        path: 'architecture',
-        routeBasePath: '/architecture',
-        sidebarPath: require.resolve('./sidebarsArchitecture'),
-        ...commonDocsOptions,
+        id: "patientStory",
+        routeBasePath: "patient-story",
+        path: "./patient-story",
+        ...commonBlogOptions,
       },
     ],
     [
-      'content-docs',
-      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      "@docusaurus/plugin-content-blog",
       {
-        id: 'contributing',
-        path: 'contributing',
-        routeBasePath: '/contributing',
-        sidebarPath: require.resolve('./sidebarsContributing'),
-        ...commonDocsOptions,
+        id: "events",
+        routeBasePath: "events",
+        path: "./events",
+        ...commonBlogOptions,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        id: "news",
+        routeBasePath: "news",
+        path: "./news",
+        ...commonBlogOptions,
       },
     ],
     [
@@ -212,14 +208,15 @@ const config: Config = {
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
-    announcementBar: {
-      id: 'new-architecture',
-      content:
-        'The New Architecture has arrived - <a target="_blank" rel="noopener noreferrer" href="/blog/2024/10/23/the-new-architecture-is-here">learn more</a>',
-      backgroundColor: '#20232a',
-      textColor: '#fff',
-      isCloseable: false,
-    },
+    // TODO: Add announcement bar
+    // announcementBar: {
+    //   id: 'new-architecture',
+    //   content:
+    //     'The New Architecture has arrived - <a target="_blank" rel="noopener noreferrer" href="/blog/2024/10/23/the-new-architecture-is-here">learn more</a>',
+    //   backgroundColor: '#20232a',
+    //   textColor: '#fff',
+    //   isCloseable: false,
+    // },
     prism: {
       defaultLanguage: 'jsx',
       theme: require('./core/PrismTheme'),
@@ -257,73 +254,63 @@ const config: Config = {
       ],
     },
     navbar: {
-      title: 'React Native',
+      title: '圆友社区',
       logo: {
         src: 'img/header_logo.svg',
-        alt: 'React Native',
+        alt: '圆友社区',
       },
       style: 'dark',
       items: [
         {
-          label: 'Development',
+          label: '新闻与活动',
           type: 'dropdown',
           position: 'right',
           items: [
             {
-              label: 'Guides',
-              type: 'doc',
-              docId: 'getting-started',
+              label: '新闻',
+              to: '/news',
             },
             {
-              label: 'Components',
-              type: 'doc',
-              docId: 'components-and-apis',
-            },
-            {
-              label: 'APIs',
-              type: 'doc',
-              docId: 'accessibilityinfo',
-            },
-            {
-              label: 'Architecture',
-              type: 'doc',
-              docId: 'architecture-overview',
-              docsPluginId: 'architecture',
+              label: '活动',
+              to: '/events',
             },
           ],
         },
         {
-          type: 'doc',
-          docId: 'overview',
-          label: 'Contributing',
+          label: '圆友专区',
+          type: 'dropdown',
           position: 'right',
-          docsPluginId: 'contributing',
-        },
-        {
-          type: 'doc',
-          docId: 'overview',
-          label: 'Community',
-          position: 'right',
-          docsPluginId: 'community',
-        },
-        {
-          to: '/showcase',
-          label: 'Showcase',
-          position: 'right',
+          items: [
+            {
+              label: '科普信息',
+              type: 'doc',
+              docId: 'about',
+            },
+            {
+              to: '/patient-story',
+              label: '圆友故事',
+            },
+          ],
         },
         {
           to: '/blog',
-          label: 'Blog',
+          label: '博客',
           position: 'right',
         },
         {
-          type: 'docsVersionDropdown',
-          position: 'left',
-          dropdownActiveClassDisabled: true,
-          dropdownItemsAfter: [
+          label: '其它',
+          type: 'dropdown',
+          position: 'right',
+          items: [
             {
-              to: '/versions',
-              label: 'All versions',
+              label: '关于我们',
+              type: 'doc',
+              docId: 'about',
+            },
+            {
+              label: '志愿者招募',
+              type: 'doc',
+              docId: 'volunteer',
             },
           ],
         },
@@ -344,19 +331,11 @@ const config: Config = {
           items: [
             {
               label: 'Guides',
-              to: 'docs/getting-started',
+              to: 'docs/about',
             },
             {
               label: 'Components',
-              to: 'docs/components-and-apis',
-            },
-            {
-              label: 'APIs',
-              to: 'docs/accessibilityinfo',
-            },
-            {
-              label: 'Architecture',
-              to: 'architecture/overview',
+              to: 'docs/about',
             },
           ],
         },
@@ -366,10 +345,6 @@ const config: Config = {
             {
               label: 'Showcase',
               to: 'showcase',
-            },
-            {
-              label: 'Contributing',
-              to: 'contributing/overview',
             },
             {
               label: 'Community',

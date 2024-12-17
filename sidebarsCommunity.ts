@@ -7,7 +7,7 @@ export default {
       label: 'Community',
       collapsed: false,
       collapsible: false,
-      items: ['overview', 'staying-updated', 'communities', 'support'],
+      items: ['overview'],
     },
   ],
 } satisfies SidebarsConfig;
