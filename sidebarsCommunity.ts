@@ -4,7 +4,7 @@ export default {
   community: [
     {
       type: 'category',
-      label: 'Community',
+      label: '社区',
       collapsed: false,
       collapsible: false,
       items: ['overview'],

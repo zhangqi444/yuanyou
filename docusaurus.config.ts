@@ -15,7 +15,7 @@ const copyright = `Copyright © ${new Date().getFullYear()} 圆友社区 版权�
 
 const commonDocsOptions = {
   breadcrumbs: false,
-  showLastUpdateAuthor: false,
+  showLastUpdateAuthor: true,
   showLastUpdateTime: true,
   editUrl:
     'https://github.com/zhangqi444/yuanyou',
@@ -110,6 +110,7 @@ const config: Config = {
     'docusaurus-plugin-sass',
     [
       "@docusaurus/plugin-content-blog",
+      /** @type {import('@docusaurus/plugin-content-blog').Options} */
       {
         id: "patientStory",
         routeBasePath: "patient-story",
@@ -119,6 +120,7 @@ const config: Config = {
     ],
     [
       "@docusaurus/plugin-content-blog",
+      /** @type {import('@docusaurus/plugin-content-blog').Options} */
       {
         id: "events",
         routeBasePath: "events",
@@ -128,6 +130,7 @@ const config: Config = {
     ],
     [
       "@docusaurus/plugin-content-blog",
+      /** @type {import('@docusaurus/plugin-content-blog').Options} */
       {
         id: "news",
         routeBasePath: "news",
@@ -143,6 +146,28 @@ const config: Config = {
         path: 'community',
         routeBasePath: '/community',
         sidebarPath: require.resolve('./sidebarsCommunity'),
+        ...commonDocsOptions,
+      },
+    ],
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      {
+        id: 'guide',
+        path: 'guide',
+        routeBasePath: '/guide',
+        sidebarPath: require.resolve('./sidebarsGuide'),
+        ...commonDocsOptions,
+      },
+    ],
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      {
+        id: 'knowledge',
+        path: 'knowledge',
+        routeBasePath: '/knowledge',
+        sidebarPath: require.resolve('./sidebarsKnowledge'),
         ...commonDocsOptions,
       },
     ],
@@ -277,17 +302,20 @@ const config: Config = {
           ],
         },
         {
-          label: '圆友专区',
+          label: '资料汇总',
           type: 'dropdown',
           position: 'right',
           items: [
             {
-              label: '科普信息',
-              type: 'doc',
-              docId: 'about',
+              label: '圆科普',
+              to: '/knowledge/圆锥角膜',
             },
             {
-              to: '/patient-story',
+              to: '/guide/周兴涛、徐建江、陈世豪、姚玉峰等角膜病名医汇总【长三角篇】',
+              label: '就医指南',
+            },
+            {
+              to: '/patient-story/2019/11/27/圆锥角膜走进我的生活——圆友社区创始人的真情自述',
               label: '圆友故事',
             },
           ],
@@ -311,6 +339,11 @@ const config: Config = {
               label: '志愿者招募',
               type: 'doc',
               docId: 'volunteer',
+            },
+            {
+              label: '圆友自助40字总纲',
+              type: 'doc',
+              docId: 'guide',
             },
           ],
         },
