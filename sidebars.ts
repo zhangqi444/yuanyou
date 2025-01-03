@@ -6,6 +6,7 @@ export default {
       'about',
       'volunteer',
       'guide',
+      'contact',
     ],
   },
 } satisfies SidebarsConfig;

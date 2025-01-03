@@ -1,13 +1,13 @@
 {
-  "name": "react-native-website",
-  "description": "React Native website",
+  "name": "yuanyou-website",
+  "description": "Yuanyou website",
   "version": "0.0.1",
   "private": true,
   "license": "CC-BY-4.0",
-  "homepage": "https://reactnative.dev/",
-  "repository": "github:facebook/react-native-website",
+  "homepage": "https://yuanzhuijiaomo.org/",
+  "repository": "github:zhangqi444/yuanyou",
   "bugs": {
-    "url": "https://github.com/facebook/react-native-website/issues"
+    "url": "https://github.com/zhangqi444/yuanyou/issues"
   },
   "scripts": {
     "docusaurus": "docusaurus",

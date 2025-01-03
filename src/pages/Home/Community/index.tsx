@@ -72,7 +72,8 @@ function Community() {
             })}
           </ul>
           <p>
-            <a href={useBaseUrl(`showcase`)}>了解更多</a>。
+            <a href={useBaseUrl(`showcase`)}>了解更多</a>{'或者'}
+            <a href={useBaseUrl(`docs/volunteer`)}>加入我们</a>。
           </p>
         </div>
       </div>

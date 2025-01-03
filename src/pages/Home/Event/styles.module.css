@@ -33,14 +33,12 @@
 
 .videoInfo {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .videoInfo p {
-  position: relative;
-  top: 2px;
 }
 
 @media only screen and (max-width: 700px) {

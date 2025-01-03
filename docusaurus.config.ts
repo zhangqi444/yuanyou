@@ -36,19 +36,18 @@ const config: Config = {
   future: {
     // Make Docusaurus build faster - enabled by default
     // See https://github.com/facebook/docusaurus/issues/10556
-    // See https://github.com/facebook/react-native-website/pull/4268
+    // See https://github.com/zhangqi444/yuanyou/pull/4268
     // See https://docusaurus.io/blog/releases/3.6
     experimental_faster: (process.env.DOCUSAURUS_FASTER ?? 'true') === 'true',
   },
 
   title: '圆友社区',
-  tagline: 'A framework for building native apps using React',
-  organizationName: '圆友社区',
-  projectName: '圆友社区',
+  tagline: '圆锥角膜患者自助互助公益平台',
+  organizationName: 'zhangqi444',
+  projectName: 'yuanyou.github.io',
   url: 'https://yuanzhuijiaomo.org',
   baseUrl: '/',
   clientModules: [
-    require.resolve('./modules/snackPlayerInitializer.js'),
     require.resolve('./modules/jumpToFragment.js'),
   ],
   trailingSlash: false, // because trailing slashes can break some existing relative links
@@ -136,17 +135,6 @@ const config: Config = {
         routeBasePath: "news",
         path: "./news",
         ...commonBlogOptions,
-      },
-    ],
-    [
-      'content-docs',
-      /** @type {import('@docusaurus/plugin-content-docs').Options} */
-      {
-        id: 'community',
-        path: 'community',
-        routeBasePath: '/community',
-        sidebarPath: require.resolve('./sidebarsCommunity'),
-        ...commonDocsOptions,
       },
     ],
     [
@@ -299,6 +287,10 @@ const config: Config = {
               label: '活动',
               to: '/events',
             },
+            {
+              label: '往期活动',
+              href: 'https://pan.baidu.com/s/11kOe4PkROegmfhfZurjzrA?pwd=m2rf',
+            },
           ],
         },
         {
@@ -330,16 +322,24 @@ const config: Config = {
           position: 'right',
           items: [
             {
-              label: '关于我们',
-              to: 'docs/about',
+              label: '我们的纲领',
+              to: 'docs/guide',
             },
             {
-              label: '加入我们',
+              label: '光荣榜',
+              to: 'showcase',
+            },
+            {
+              label: '志愿者申请',
               to: 'docs/volunteer',
             },
             {
-              label: '我们的纲领',
-              to: 'docs/guide',
+              label: '联系我们',
+              to: 'docs/contact',
+            },
+            {
+              label: '关于我们',
+              to: 'docs/about',
             },
             {
               label: '圆友自助40字总纲',
@@ -371,6 +371,10 @@ const config: Config = {
               label: '活动',
               to: '/events',
             },
+            {
+              label: '往期活动',
+              href: 'https://pan.baidu.com/s/11kOe4PkROegmfhfZurjzrA?pwd=m2rf',
+            },
           ],
         },
         {
@@ -396,19 +400,48 @@ const config: Config = {
           ],
         },
         {
+          title: '联系我们',
+          items: [
+            {
+              label: '微信公众号',
+              to: 'docs/contact',
+            },
+            {
+              label: '微信',
+              to: 'docs/contact',
+            },
+            {
+              label: '知乎',
+              href: 'https://www.zhihu.com/people/yuan-zhui-jiao-mo-bing-you-hui',
+            },
+            {
+              label: '邮箱',
+              to: 'docs/contact',
+            },
+            {
+              label: 'QQ',
+              to: 'docs/contact',
+            },
+          ],
+        },
+        {
           title: '其它',
           items: [
             {
-              label: '关于我们',
-              to: 'docs/about',
+              label: '我们的纲领',
+              to: 'docs/guide',
             },
             {
-              label: '加入我们',
+              label: '光荣榜',
+              to: 'showcase',
+            },
+            {
+              label: '志愿者申请',
               to: 'docs/volunteer',
             },
             {
-              label: '我们的纲领',
-              to: 'docs/guide',
+              label: '关于我们',
+              to: 'docs/about',
             },
           ],
         },
