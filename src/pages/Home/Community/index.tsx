@@ -50,7 +50,8 @@ function Community() {
         </div>
         <div>
           <p>
-            圆友社区的成长也得到了社会各界的广泛支持，无数医务工作者志愿为社区提供专业指导、丰富资源，给患者们带去了温暖与关怀。感谢以下医院和医疗机构对社区的长期帮助。
+            圆友社区的成长离不开志愿者们无私地奉献，也得到了社会各界的广泛支持与关注，他们为社区提供了专业的指导、丰富了各类内容资源，给患者们带去了无尽的温暖与关怀。
+            感谢我们的志愿者团队，以及来自以下医院的医务工作者和社会机构的工作人员对圆友社区的长期帮助。
           </p>
           <ul className="AppList">
             {apps.map((app, i) => {
@@ -61,7 +62,7 @@ function Community() {
                 <li key={i} className="item">
                   {app.infoLink ? (
                     <a href={app.infoLink}>
-                      <img src={imgSource} alt={app.name} />
+                      <img src={imgSource} style={{width: '100px', height: '100px', objectFit: 'contain'}} alt={app.name} />
                     </a>
                   ) : (
                     <img src={imgSource} alt={app.name} />
@@ -71,7 +72,7 @@ function Community() {
             })}
           </ul>
           <p>
-            and <a href={useBaseUrl(`showcase`)}>many more</a>.
+            <a href={useBaseUrl(`showcase`)}>了解更多</a>。
           </p>
         </div>
       </div>

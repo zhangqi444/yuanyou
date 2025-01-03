@@ -13,14 +13,6 @@ import ThemeImage from '../components/ThemeImage';
 function Hero() {
   return (
     <div className={styles.container}>
-      <div className={styles.socialLinks}>
-        <a
-          className="twitter-follow-button"
-          data-show-count="false"
-          data-size="large">
-          关注微信公众号 @yuanyoushequ
-        </a>
-      </div>
       <div className={styles.backgroundContainer}>
         <div className={styles.gridBackground}>
           <ThemeImage

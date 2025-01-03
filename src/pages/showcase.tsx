@@ -95,162 +95,103 @@ const randomizeApps = apps =>
 
 const Showcase = () => {
   const {siteConfig} = useDocusaurusContext();
-  const {meta, microsoft, shopify, wix, amazon, others} = siteConfig
+  const {hospital, school, organization, volunteer} = siteConfig
     .customFields.users as typeof users;
   const [pinnedRandomizedApps, setPinnedRandomizedApps] = useState([]);
   const [randomizedApps, setRandomizedApps] = useState([]);
 
   useEffect(() => {
-    setRandomizedApps(randomizeApps(others.filter(app => !app.pinned)));
-    setPinnedRandomizedApps(randomizeApps(others.filter(app => app.pinned)));
+    // setRandomizedApps(randomizeApps(others.filter(app => !app.pinned)));
+    // setPinnedRandomizedApps(randomizeApps(others.filter(app => app.pinned)));
   }, []);
 
   return (
     <Layout
       title="Showcase"
-      description="Thousands of apps are using React Native, check out these apps!">
+      description="看看谁在帮助我们共建圆友社区!">
       <Section background="dark">
         <div className="sectionContainer headerContainer">
           <h1>
-            Who is using <span>React Native</span>?
+            谁在帮助我们共建<span>圆友社区</span>?
           </h1>
           <p>
-            Thousands of apps are using React Native, from established Fortune
-            500 companies to hot new startups. If you are curious to see what
-            can be accomplished with React Native, check out these apps!
+            圆友社区的成长离不开志愿者们无私地奉献，也得到了社会各界的广泛支持与关注，他们为社区提供了专业的指导、丰富了各类内容资源，给患者们带去了无尽的温暖与关怀。
+            感谢我们的志愿者团队，以及来自以下医院的医务工作者和社会机构的工作人员对圆友社区的长期帮助。
           </p>
         </div>
       </Section>
       <Section>
         <div className="showcaseSection">
-          <h2 className="withLogo">
-            <ThemedImage
-              alt="Meta logo"
-              width={140}
+          <div style={{display: 'flex', alignItems: 'center' }}>
+            <h2 className="withLogo">
+              <ThemedImage
+                alt="Volunteer logo"
               sources={{
-                light: useBaseUrl('/img/meta_positive_primary.svg'),
-                dark: useBaseUrl('/img/meta_negative_primary.svg'),
-              }}
-            />
-          </h2>
-          <p className="showcaseSectionDescription">
-            React Native is shaping mobile, web, and desktop experiences within
-            Meta’s product ecosystem, from Facebook Marketplace, Messenger
-            Desktop, Ads Manager to the Meta Quest app and many more.
-          </p>
-          <div className="logos">{meta.map(renderApp)}</div>
-        </div>
-        <div className="showcaseSection">
-          <h2 className="withLogo">
-            <ThemedImage
-              alt="Microsoft logo"
-              width={180}
-              sources={{
-                light: useBaseUrl('/img/microsoft-logo-gray.png'),
-                dark: useBaseUrl('/img/microsoft-logo-white.png'),
-              }}
-            />
-          </h2>
-          <p className="showcaseSectionDescription">
-            Microsoft leverages the power of React Native to deliver excellent
-            customer experiences in some of its most well known apps.
-            <br />
-            Microsoft doesn't stop at mobile platforms either -- Microsoft
-            leverages React Native to target desktop too! Find out more in the{' '}
-            <a
-              href="https://microsoft.github.io/react-native-windows/resources-showcase"
-              target="_blank">
-              dedicated showcase
-            </a>{' '}
-            for React Native Windows and macOS.
-          </p>
-          <div className="logos">{microsoft.map(renderApp)}</div>
-        </div>
-        <div className="showcaseSection">
-          <h2 className="withLogo">
-            <ThemedImage
-              alt="Amazon logo"
-              width={140}
-              sources={{
-                light: useBaseUrl('/img/amazon_logo_lightbg.png'),
-                dark: useBaseUrl('/img/amazon_logo_darkbg.png'),
-              }}
-            />
-          </h2>
-          <p className="showcaseSectionDescription">
-            Amazon has used React Native to rapidly deliver new customer-facing
-            features in some of its most popular mobile applications as early as
-            2016. Amazon also uses React Native to support customer-favorite
-            devices such as the Kindle E-readers.
-          </p>
-          <div className="logos">{amazon.map(renderApp)}</div>
-        </div>
-        <div className="showcaseSection">
-          <h2 className="withLogo">
-            <ThemedImage
-              alt="Shopify logo"
-              width={160}
-              sources={{
-                light: useBaseUrl('/img/shopify_logo_whitebg.svg'),
-                dark: useBaseUrl('/img/shopify_logo_darkbg.svg'),
-              }}
-            />
-          </h2>
-          <p className="showcaseSectionDescription">
-            All new mobile apps at Shopify are React Native and we are actively
-            migrating our flagship merchant admin app Shopify Mobile to React
-            Native as well. You can read more about React Native development at
-            Shopify on our{' '}
-            <a href="https://shopify.engineering/topics/mobile" target="_blank">
-              blog
-            </a>
-            .
-          </p>
-          <div className="logos">{shopify.map(renderApp)}</div>
-        </div>
-        <div className="showcaseSection">
-          <h2 className="withLogo">
-            <ThemedImage
-              alt="Wix logo"
-              width={80}
-              sources={{
-                light: useBaseUrl('/img/showcase/wix_logo_lightbg.svg'),
-                dark: useBaseUrl('/img/showcase/wix_logo_darkbg.svg'),
-              }}
-            />
-          </h2>
-          <p className="showcaseSectionDescription">
-            With one of the largest React Native code bases in the world, Wix
-            has a long history with the development community and maintains a
-            variety of open source projects. Wix is an early adopter of React
-            Native and uses it for its entire suite of applications.
-          </p>
-          <div className="logos">{wix.map(renderApp)}</div>
-        </div>
-        <div className="showcaseSection showcaseCustomers">
-          <h2>Users Showcase</h2>
-          <div className="logos">
-            {pinnedRandomizedApps.map(renderApp)}
-            {randomizedApps.map(renderApp)}
+                light: useBaseUrl('/img/homepage/volunteer.svg'),
+                dark: useBaseUrl('/img/homepage/volunteer.svg'),
+                }}
+              />
+            </h2>
+            <h1 style={{margin: '0px'}}>志愿者</h1>
           </div>
+          <div className="logos">{volunteer.map(renderApp)}</div>
+        </div>
+        <div className="showcaseSection">
+          <div style={{display: 'flex', alignItems: 'center' }}>
+            <h2 className="withLogo">
+              <ThemedImage
+                alt="Hospital logo"
+              sources={{
+                light: useBaseUrl('/img/homepage/hospital.svg'),
+                dark: useBaseUrl('/img/homepage/hospital.svg'),
+                }}
+              />
+            </h2>
+            <h1 style={{margin: '0px'}}>医院</h1>
+          </div>
+          <div className="logos">{hospital.map(renderApp)}</div>
+        </div>
+        <div className="showcaseSection">
+          <div style={{display: 'flex', alignItems: 'center' }}>
+            <h2 className="withLogo">
+              <ThemedImage
+                alt="School logo"
+                sources={{
+                  light: useBaseUrl('/img/homepage/school.svg'),
+                  dark: useBaseUrl('/img/homepage/school.svg'),
+                }}
+              />
+            </h2>
+            <h1 style={{margin: '0px'}}>学校</h1>
+          </div>
+          <div className="logos">{school.map(renderApp)}</div>
+        </div>
+        <div className="showcaseSection">
+          <div style={{display: 'flex', alignItems: 'center' }}>
+            <h2 className="withLogo">
+              <ThemedImage
+                alt="Org logo"
+                sources={{
+                  light: useBaseUrl('/img/homepage/organization.svg'),
+                  dark: useBaseUrl('/img/homepage/organization.svg'),
+                }}
+              />
+            </h2>
+            <h1 style={{margin: '0px'}}>机构</h1>
+          </div>
+          <div className="logos">{organization.map(renderApp)}</div>
         </div>
       </Section>
       <Section background="dark">
         <div className="sectionContainer footerContainer">
           <a
             className="formButton"
-            href="https://forms.gle/BdNf3v5hemV9D5c86"
+            href="/docs/volunteer"
             target="_blank">
-            Apply to the Showcase by filling out this form
+            申请加入志愿团队
           </a>
           <p>
-            A curated list of{' '}
-            <a
-              key="demo-apps"
-              href="https://github.com/ReactNativeNews/React-Native-Apps">
-              open source React Native apps
-            </a>{' '}
-            is maintained by <a href="https://infinite.red">Infinite Red</a>.
+            如果你也有志于为圆友社区贡献一分自己的力量，不要犹豫，加入我们吧！
           </p>
         </div>
       </Section>
