@@ -6,14 +6,9 @@
  */
 
 import React from 'react';
-import GitHubButton from 'react-github-btn';
 
-import Logo from '../Logo';
-
-import GridBackground from './GridBackground';
-import FloorBackground from './FloorBackground';
-import Devices from './Devices';
 import styles from './styles.module.css';
+import ThemeImage from '../components/ThemeImage';
 
 function Hero() {
   return (
@@ -21,40 +16,31 @@ function Hero() {
       <div className={styles.socialLinks}>
         <a
           className="twitter-follow-button"
-          href={`https://twitter.com/reactnative?ref_src=twsrc%5Etfw`}
           data-show-count="false"
           data-size="large">
-          Follow @reactnative
+          关注微信公众号 @yuanyoushequ
         </a>
-        <GitHubButton
-          href="https://github.com/facebook/react-native"
-          data-icon="octicon-star"
-          data-size="large"
-          aria-label="Star facebook/react-native on GitHub">
-          Star
-        </GitHubButton>
       </div>
       <div className={styles.backgroundContainer}>
         <div className={styles.gridBackground}>
-          <GridBackground />
-        </div>
-        <div className={styles.devices}>
-          <Devices />
-        </div>
-        <div className={styles.floorBackground}>
-          <FloorBackground />
+          <ThemeImage
+            lightSrc="/img/homepage/cover.png"
+            darkSrc="/img/homepage/cover-dark.png"
+            className={styles.flyoutIllustration}
+            alt="圆友故事"
+          />
         </div>
       </div>
       <div className={styles.content}>
-        <Logo />
+        <img style={{width: '112px', height: '112px'}} src="/img/yuanyou_logo.jpeg" alt="圆友社区 Logo" />
         <h1 className={styles.title}>圆友社区</h1>
-        <h2 className={styles.subtitle}>Learn once, write anywhere.</h2>
+        <h2 className={styles.subtitle}>圆锥角膜患者自助互助公益平台</h2>
         <div className={styles.buttonContainer}>
-          <a href="/docs/environment-setup" className={styles.primaryButton}>
-            Get Started
+          <a href="/knowledge/圆锥角膜" className={styles.primaryButton}>
+            了解圆锥
           </a>
-          <a href="/docs/getting-started" className={styles.secondaryButton}>
-            Learn the Basics
+          <a href="/docs/volunteer" className={styles.secondaryButton}>
+            我要分享
           </a>
         </div>
       </div>

@@ -16,17 +16,17 @@ import Home from './Home';
 const Index = () => {
   return (
     <Layout
-      description="A framework for building native apps using React"
+      description="中国第一个圆锥角膜患者社区"
       wrapperClassName="homepage">
       <Head>
-        <title>React Native · Learn once, write anywhere</title>
+        <title>圆友社区 · 圆锥角膜患者自助互助公益平台</title>
         <meta
           property="og:title"
-          content="React Native · Learn once, write anywhere"
+          content="圆友社区 · 圆锥角膜患者自助互助公益平台"
         />
         <meta
           property="twitter:title"
-          content="React Native · Learn once, write anywhere"
+          content="圆友社区 · 圆锥角膜患者自助互助公益平台"
         />
       </Head>
       <Home />

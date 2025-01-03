@@ -8,10 +8,10 @@
 import React from 'react';
 
 import Hero from './Hero';
-import Platforms from './Platforms';
-import Native from './Native';
-import Framework from './Framework';
-import Watch from './Watch';
+import WhoWeAre from './WhoWeAre';
+import PatientStory from './PatientStory';
+import Knowledge from './Knowledge';
+import Event from './Event';
 import Community from './Community';
 import CallToAction from './CallToAction';
 
@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Platforms />
-      <Native />
-      <Framework />
-      <Watch />
+      <WhoWeAre />
+      <PatientStory />
+      <Knowledge />
+      <Event />
       <Community />
       <CallToAction />
     </>

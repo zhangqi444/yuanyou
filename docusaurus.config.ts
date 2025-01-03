@@ -281,7 +281,7 @@ const config: Config = {
     navbar: {
       title: '圆友社区',
       logo: {
-        src: 'img/header_logo.svg',
+        src: 'img/yuanyou_logo.jpeg',
         alt: '圆友社区',
       },
       style: 'dark',
@@ -318,12 +318,11 @@ const config: Config = {
               to: '/patient-story/2019/11/27/圆锥角膜走进我的生活——圆友社区创始人的真情自述',
               label: '圆友故事',
             },
+            {
+              label: '博客',
+              to: '/blog',
+            },
           ],
-        },
-        {
-          to: '/blog',
-          label: '博客',
-          position: 'right',
         },
         {
           label: '其它',
@@ -332,13 +331,15 @@ const config: Config = {
           items: [
             {
               label: '关于我们',
-              type: 'doc',
-              docId: 'about',
+              to: 'docs/about',
             },
             {
-              label: '志愿者招募',
-              type: 'doc',
-              docId: 'volunteer',
+              label: '加入我们',
+              to: 'docs/volunteer',
+            },
+            {
+              label: '我们的纲领',
+              to: 'docs/guide',
             },
             {
               label: '圆友自助40字总纲',
@@ -348,7 +349,7 @@ const config: Config = {
           ],
         },
         {
-          href: 'https://github.com/facebook/react-native',
+          href: 'https://github.com/zhangqi444/yuanyou',
           'aria-label': 'GitHub repository',
           position: 'right',
           className: 'navbar-github-link',
@@ -360,78 +361,71 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Develop',
+          title: '新闻与活动',
           items: [
             {
-              label: 'Guides',
+              label: '新闻',
+              to: '/news',
+            },
+            {
+              label: '活动',
+              to: '/events',
+            },
+          ],
+        },
+        {
+          title: '资料汇总',
+          items: [
+            {
+              label: '圆科普',
+              to: '/knowledge/圆锥角膜',
+            },
+            {
+              to: '/guide/周兴涛、徐建江、陈世豪、姚玉峰等角膜病名医汇总【长三角篇】',
+              label: '就医指南',
+            },
+            {
+              to: '/patient-story/2019/11/27/圆锥角膜走进我的生活——圆友社区创始人的真情自述',
+              label: '圆友故事',
+            },
+            {
+              to: '/blog',
+              label: '博客',
+              position: 'right',
+            },
+          ],
+        },
+        {
+          title: '其它',
+          items: [
+            {
+              label: '关于我们',
               to: 'docs/about',
             },
             {
-              label: 'Components',
-              to: 'docs/about',
+              label: '加入我们',
+              to: 'docs/volunteer',
+            },
+            {
+              label: '我们的纲领',
+              to: 'docs/guide',
             },
           ],
         },
         {
-          title: 'Participate',
+          title: '友情链接',
           items: [
             {
-              label: 'Showcase',
-              to: 'showcase',
-            },
-            {
-              label: 'Community',
-              to: 'community/overview',
-            },
-            {
-              label: 'Directory',
-              href: 'https://reactnative.directory/',
-            },
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/react-native',
-            },
-          ],
-        },
-        {
-          title: 'Find us',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/reactnative',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/react-native',
-            },
-          ],
-        },
-        {
-          title: 'Explore More',
-          items: [
-            {
-              label: 'ReactJS',
-              href: 'https://react.dev/',
-            },
-            {
-              label: 'Privacy Policy',
-              href: 'https://opensource.fb.com/legal/privacy/',
-            },
-            {
-              label: 'Terms of Service',
-              href: 'https://opensource.fb.com/legal/terms/',
+              label: 'The National Keratoconus Foundation (NKCF) ',
+              href: 'https://nkcf.org/',
             },
           ],
         },
       ],
       logo: {
-        alt: 'Meta Open Source Logo',
-        src: 'img/oss_logo.svg',
-        href: 'https://opensource.fb.com/',
+        alt: '圆友社区 Logo',
+        src: 'img/yuanyou_logo.jpeg',
+        href: 'https://yuanzhuijiaomo.org/',
       },
       copyright,
     },
@@ -444,14 +438,14 @@ const config: Config = {
     metadata: [
       {
         property: 'og:image',
-        content: 'https://reactnative.dev/img/logo-share.png',
+        content: 'https://yuanzhuijiaomo.org/img/logo-share.png',
       },
       {name: 'twitter:card', content: 'summary_large_image'},
       {
         name: 'twitter:image',
-        content: 'https://reactnative.dev/img/logo-share.png',
+        content: 'https://yuanzhuijiaomo.org/img/logo-share.png',
       },
-      {name: 'twitter:site', content: '@reactnative'},
+      {name: 'twitter:site', content: '@yuanzhuijiaomo'},
     ],
   } satisfies Preset.ThemeConfig,
 };

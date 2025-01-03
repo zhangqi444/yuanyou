@@ -14,6 +14,7 @@
   z-index: -1;
   overflow: hidden;
   width: 100%;
+  top: -3px;
 }
 
 .socialLinks {
@@ -24,47 +25,10 @@
   margin-right: 1rem;
 }
 
-.gridBackground {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 600px;
-}
-
-.devices {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: -100px;
-  left: -20px;
-}
-
-.floorBackground {
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 300px;
-  position: relative;
-  top: -4px;
-  background: linear-gradient(
-      to bottom,
-      var(--home-hero-floor-background) 0%,
-      var(--home-hero-floor-background-bottom)
-    ),
-    var(--home-hero-floor-background-bottom);
-}
-
 .svgContent {
   position: absolute;
 }
 
-.logo {
-  margin-bottom: 1rem;
-}
 
 .title {
   font-size: 40px;
@@ -80,7 +44,7 @@
 
 .content {
   position: relative;
-  top: 120px;
+  top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,6 +60,13 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.flyoutIllustration {
+  margin: 4rem auto;
+  width: 100%;
+  opacity: 0.2;
+}
+
 
 .primaryButton {
   background-color: var(--home-button-primary);

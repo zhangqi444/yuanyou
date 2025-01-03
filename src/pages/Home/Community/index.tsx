@@ -22,55 +22,35 @@ function Community() {
 
   return (
     <Section>
-      <SectionTitle title="Meta supported. Community driven." />
+      <SectionTitle title="圆友自助，社会支持" />
       <div className={styles.featureContainer}>
         <div>
           <p>
-            Meta released React Native in 2015 and has been maintaining it ever
-            since.
+            回想我们走过的路，都是因为曾经的无助和迷茫，我们想要帮助更多的人，少一些焦虑和绝望，多一份力量和方向。
           </p>
           <p>
-            In 2018, React Native had the{' '}
-            <a href="https://octoverse.github.com/2018/projects#repositories">
-              2nd highest
-            </a>{' '}
-            number of contributors for any repository in GitHub. Today, React
-            Native is supported by contributions from individuals and companies
-            around the world including{' '}
-            <span>
-              <a href="https://callstack.com/">Callstack</a>
-            </span>
-            ,{' '}
-            <span>
-              <a href="https://expo.io/">Expo</a>
-            </span>
-            , <a href="https://infinite.red/">Infinite Red</a>,{' '}
-            <a href="https://www.microsoft.com/">Microsoft</a> and{' '}
-            <a href="https://swmansion.com/">Software Mansion</a>.
+            到2020年初，我们已经：{' '}
           </p>
           <p>
-            Our community is always shipping exciting new projects and exploring
-            platforms beyond Android and iOS with repos like{' '}
-            <span>
-              <a href="https://github.com/microsoft/react-native-windows#readme">
-                React Native Windows
-              </a>
-            </span>
-            ,{' '}
-            <a href="https://github.com/microsoft/react-native-macos#readme">
-              React Native macOS
-            </a>{' '}
-            and{' '}
-            <a href="https://github.com/necolas/react-native-web#readme">
-              React Native Web
-            </a>
-            .
+            <ul>
+              <li>连接了超过20000名圆锥角膜患者；</li>
+              <li>发布了130多篇原创医学科普文章；</li>
+              <li>有效阅读量突破100万次；</li>
+              <li>举办了90多场线下分享会和沙龙活动；</li>
+              <li>合作了20多家知名医院和医疗机构，包括复旦大学附属眼耳鼻喉科医院、北京同仁医院、厦门大学附属眼科中心等。</li>
+            </ul>
+          </p>
+            
+          <p>
+            我们还推出了公益救助项目，协助报道圆锥角膜患者的真实故事。我们的服务范围也在逐步扩大，逐渐覆盖到角膜移植、角膜接触镜等领域。
+          </p>
+          <p>
+            一路走来，我们看到过迷茫，也看到过重燃的希望。我们知道，这件事情值得去做，也希望有更多的人加入我们，一起帮助更多的人，让温暖延续。
           </p>
         </div>
         <div>
           <p>
-            React Native is being used in thousands of apps, but it's likely
-            you've already used it in one of these apps:
+            圆友社区的成长也得到了社会各界的广泛支持，无数医务工作者志愿为社区提供专业指导、丰富资源，给患者们带去了温暖与关怀。感谢以下医院和医疗机构对社区的长期帮助。
           </p>
           <ul className="AppList">
             {apps.map((app, i) => {

@@ -4,6 +4,8 @@ export default {
   docs: {
     '其它': [
       'about',
+      'volunteer',
+      'guide',
     ],
   },
 } satisfies SidebarsConfig;
