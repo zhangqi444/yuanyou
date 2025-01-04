@@ -44,7 +44,7 @@ const config: Config = {
   title: '圆友社区',
   tagline: '圆锥角膜患者自助互助公益平台',
   organizationName: 'zhangqi444',
-  projectName: 'yuanyou.github.io',
+  projectName: 'yuanyou',
   url: 'https://yuanzhuijiaomo.org',
   baseUrl: '/',
   clientModules: [
