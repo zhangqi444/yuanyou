@@ -45,7 +45,7 @@ const config: Config = {
   tagline: '圆锥角膜患者自助互助公益平台',
   organizationName: 'zhangqi444',
   projectName: 'yuanyou',
-  url: 'https://yuanzhuijiaomo.org',
+  url: 'https://www.yuanzhuijiaomo.org',
   baseUrl: '/',
   clientModules: [
     require.resolve('./modules/jumpToFragment.js'),
@@ -463,9 +463,9 @@ const config: Config = {
       copyright,
     },
     algolia: {
-      appId: '8TDSE0OHGQ',
-      apiKey: '83cd239c72f9f8b0ed270a04b1185288',
-      indexName: 'react-native-v2',
+      appId: 'GTMG1F5XQ1',
+      apiKey: 'b331aecafa12d74ba40741706c70a1a5',
+      indexName: 'yuanyou',
       contextualSearch: true,
     },
     metadata: [
