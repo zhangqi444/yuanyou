@@ -17,7 +17,7 @@ function Hero() {
         <div className={styles.gridBackground}>
           <ThemeImage
             lightSrc="/img/homepage/cover.png"
-            darkSrc="/img/homepage/cover-dark.png"
+            darkSrc="/img/homepage/cover.png"
             className={styles.flyoutIllustration}
             alt="圆友故事"
           />
